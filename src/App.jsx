@@ -46,11 +46,14 @@ const App = () => {
   const handClickAdd = () => {
     setIsFormVisible(true);
   };
+  const cerrarModal = () => {
+    setIsFormVisible(false);
+  };
   useEffect(() => {
     loadUser();
   }, []);
   return (
-    <div className="bg-neutral-800 min-h-screen flex flex-col justify-center items-center p-10 text-white">
+    <div className="min-h-screen flex flex-col justify-center items-center p-10 text-black">
       <div>
         <Modal isFormVisible={isFormVisible}>
           <UserForm
@@ -59,11 +62,17 @@ const App = () => {
             handleSubmit={handleSubmit}
             idUserToUpdate={idUserToUpdate}
             register={register}
+            cerrarModal={cerrarModal}
           />
         </Modal>
       </div>
       <section>
-        <Navbar handClickAdd={handClickAdd}>
+        <Navbar
+          handClickAdd={handClickAdd}
+          handleUpdateCreate={handleUpdateCreate}
+          reset={reset}
+          handleSubmit={handleSubmit}
+        >
           {isLoading ? (
             <Loading />
           ) : (

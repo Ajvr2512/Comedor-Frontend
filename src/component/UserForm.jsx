@@ -6,6 +6,7 @@ const UserForm = ({
   handleSubmit,
   idUserToUpdate,
   register,
+  cerrarModal,
 }) => {
   const emptyValueForm = {
     first_name: '',
@@ -18,12 +19,16 @@ const UserForm = ({
     await handleUpdateCreate(data);
     reset(emptyValueForm);
   };
-
   return (
-    <form className="flex flex-col gap-4 mb-5" onSubmit={handleSubmit(myHandleSubmit)}>
+    <form
+      className="formVisible flex flex-col gap-4"
+      onSubmit={handleSubmit(myHandleSubmit)}
+    >
       <h2>{idUserToUpdate ? 'Edit' : 'Create'} User</h2>
       <div>
-        <label htmlFor="nameId">First Name: </label>
+        <label htmlFor="nameId">
+          <span>First Name: </span>
+        </label>
         <input
           type="text"
           id="nameId"
@@ -32,7 +37,9 @@ const UserForm = ({
         />
       </div>
       <div>
-        <label htmlFor="LastName">Last Name: </label>
+        <label htmlFor="LastName">
+          <span>Last Name:</span>
+        </label>
         <input
           type="text"
           id="LastName"
@@ -41,11 +48,15 @@ const UserForm = ({
         />
       </div>
       <div>
-        <label htmlFor="email">Email: </label>
+        <label htmlFor="email">
+          <span>Email: </span>
+        </label>
         <input type="email" id="email" className="text-black" {...register('email')} />
       </div>
       <div>
-        <label htmlFor="password">Password: </label>
+        <label htmlFor="password">
+          <span>Password: </span>
+        </label>
         <input
           type="password"
           id="password"
@@ -54,7 +65,9 @@ const UserForm = ({
         />
       </div>
       <div>
-        <label htmlFor="birthday">Birthday: </label>
+        <label htmlFor="birthday">
+          <span>Birthday: </span>
+        </label>
         <input
           type="date"
           id="birthday"
@@ -62,10 +75,14 @@ const UserForm = ({
           {...register('birthday')}
         />
       </div>
-
-      <button type="submit" className="border border-transparent hover:border-cyan-400">
-        {idUserToUpdate ? 'Edit' : 'Create'} User
-      </button>
+      <div className="flex flex-row justify-center gap-3 items-center">
+        <button type="submit" className="BtnCreUp">
+          {idUserToUpdate ? 'Edit' : 'Create'} User
+        </button>
+        <button type="submit" className="BtnCreUp" onClick={cerrarModal}>
+          cerrar
+        </button>
+      </div>
     </form>
   );
 };
