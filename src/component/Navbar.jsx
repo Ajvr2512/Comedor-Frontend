@@ -19,7 +19,7 @@ const Navbar = ({ handClickAdd, children, handleUpdateCreate, reset, handleSubmi
         <h1 className="text-3xl font-bold"> User Admin</h1>
         <button className="BtnAdd" onClick={handleSubmit(myHandleSubmit)}>
           <i className="bx bx-add-to-queue"></i>
-          <span>Add new user</span>
+          <span>New User</span>
         </button>
       </nav>
       <div>{children}</div>

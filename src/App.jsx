@@ -53,7 +53,7 @@ const App = () => {
     loadUser();
   }, []);
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center p-10 text-black">
+    <div className="App min-h-screen flex flex-col justify-center items-center p-10 text-black">
       <div>
         <Modal isFormVisible={isFormVisible}>
           <UserForm
