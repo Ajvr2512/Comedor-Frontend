@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Modal = ({ isVisible, children }) => {
+const Modal = ({ isFormVisible, children }) => {
   return (
     <div>
-      {isVisible && (
+      {isFormVisible && (
         <div className="text-3xl text-black flex flex-row justify-center items-center absolute inset-0 bg-[rgb(0_0_0_/_0.6)]">
           {children}
         </div>
