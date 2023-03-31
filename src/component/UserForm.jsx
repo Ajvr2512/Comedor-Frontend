@@ -58,7 +58,7 @@ const UserForm = ({
           <span>Password: </span>
         </label>
         <input
-          type="password"
+          type={idUserToUpdate ? 'text' : 'password'}
           id="password"
           className="text-black"
           {...register('password')}
