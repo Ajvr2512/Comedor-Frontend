@@ -79,7 +79,7 @@ const UserForm = ({
         <button type="submit" className="BtnCreUp">
           {idUserToUpdate ? 'Edit' : 'Create'} User
         </button>
-        <button type="submit" className="BtnCreUp" onClick={cerrarModal}>
+        <button type="text" className="BtnCreUp" onClick={cerrarModal}>
           cerrar
         </button>
       </div>
