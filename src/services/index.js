@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://users-crud.academlo.tech/';
+const BASE_URL = 'https://user-crud-0a9k.onrender.com/';
 
 export const getUser = async () => {
   try {
