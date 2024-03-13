@@ -1,12 +1,7 @@
-import React from 'react';
 import Modal from 'react-modal';
 import '../index.css';
 
-const ModalConfirmacion = ({ isOpen, onClose, userInfo, onConfirm, setCode }) => {
-  const onClickModal = () => {
-    onClose();
-    setCode('');
-  };
+const ModalPrint = ({ userInfo, isOpen }) => {
   const modalStyle = {
     content: {
       maxWidth: '400px',
@@ -14,8 +9,9 @@ const ModalConfirmacion = ({ isOpen, onClose, userInfo, onConfirm, setCode }) =>
       margin: 'auto',
     },
   };
+
   return (
-    <Modal isOpen={isOpen} onRequestClose={onClose} style={modalStyle}>
+    <Modal style={modalStyle} isOpen={isOpen}>
       {userInfo && (
         <div className="ModalBody">
           <div className="modalHeader">
@@ -27,16 +23,10 @@ const ModalConfirmacion = ({ isOpen, onClose, userInfo, onConfirm, setCode }) =>
             <span className="name"> {userInfo.nombre}</span>
             <span className="name"> {userInfo.apellido}</span>?
           </p>
-          <button className="btnConfirmar" onClick={onConfirm}>
-            Confirmar
-          </button>
-          <button className="btnNo" onClick={onClickModal}>
-            No, no lo soy
-          </button>
         </div>
       )}
     </Modal>
   );
 };
 
-export default ModalConfirmacion;
+export default ModalPrint;

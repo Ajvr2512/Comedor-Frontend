@@ -1,175 +1,131 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-.root {
-  font-family: 'Inter', sans-serif;
-  font-family: 'Lato', sans-serif;
-}
 /*APP*/
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
 .App {
-  background-image:url("./assets/img/fondo_1.jpg");
-  
+    background-image: url("./assets/img/fondo.png"), linear-gradient(to bottom, rgba(0, 0, 0), rgba(117, 25, 80)); /* Agregamos la imagen de fondo y un gradiente para el color de fondo */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;  
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
 }
-/*LOADING*/
-.loader {
-  width: 84px;
-  height: 84px;
-  position: relative;
-  overflow: hidden;
-}
-.loader:before,
-.loader:after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #062226;
-  transform: translate(-50%, 100%) scale(0);
-  animation: push 2s infinite ease-in;
-}
-.loader:after {
-  animation-delay: 1s;
-}
-@keyframes push {
-  0% {
-    transform: translate(-50%, 100%) scale(1);
-  }
-  15%,
-  25% {
-    transform: translate(-50%, 50%) scale(1);
-  }
-  50%,
-  75% {
-    transform: translate(-50%, -30%) scale(0.5);
-  }
-  80%,
-  100% {
-    transform: translate(-50%, -50%) scale(0);
-  }
-}
-/* Navbar*/
-.BtnAdd {
-  border-radius: 8px;
-  font-size: 16px;
-  background-color:  #062226;
-  border: none;
-  color: white;
-  padding: 15px 20px;
+
+.contenedor {
+  width: 50vw;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  margin-left: 30%;
 }
 
-.BtnAdd:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  color: #1ddec0;
+.titulo {
+  font-family: "Comic Sans MS", cursive;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem; 
+  color: white; 
 }
 
-/*UserForm*/
-.formVisible {
-  background: white;
-  padding: 2%;
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px; 
 }
-.formVisible h2 {
+
+.inputContainer input {
+  width: 23%;
+  height: 35px;
+  max-width: 200px;
   margin: 0 auto;
-  color: #1ddec0;
-  font-weight: bold;
+  padding-left: 40px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  margin-bottom: 9px; /* Ajusta el espacio entre el input y el botón */
 }
-.formVisible span {
-  color: #1ddec0;
-  font-size: 18px;
-}
-.formVisible input {
-  border: 1px solid black;
-  border-radius: 8px;
-  font-size: 18px;
-}
-.formVisible label {
-  display: inline-block;
-  width: 100px;
-}
-.BtnCreUp {
-  width: 40%;
-  border-radius: 8px;
-  font-size: 13px;
-  background-color:  #062226;
+
+.buttonVerificar {
+
+  background-color: green; 
+  color: white; 
   border: none;
-  color: white;
-  padding: 3px 10px;
-  text-align: center;
-  text-decoration: none;
-  margin-top:10px;
-}
-.BtnCreUp:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  color: #1ddec0;
-}
-/*CardUser*/
-.BtnUser button{
-  padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: 20px;
+  padding: 10px 20px;
   font-size: 13px;
-  background-color:  #062226;
-  border: none;
-  color: white;
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s; 
+  width: 100%;
+  max-width: 150px;
+  margin: 0 auto; 
+}
+
+.buttonVerificar:hover {
+  background-color: white; 
+  color: green;
+}
+
+/* Modal*/
+.ModalBody {
   text-align: center;
-  text-decoration: none;
-  margin-top:10px;
 }
-.BtnUser button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  color: #1ddec0;
-}
-.infoCard{
-  padding: 22px 22px;
-  border: 1px solid #1ddec0;
-}
-.infoCard h2{
-  font-size:20px;
-  padding-bottom:10px;
-}
-.infoCard p {
-  font-size:20px;
-  justify-center:center;
-  items-center:center;
-}
-/*UserList*/
-.noUser{
-  width:25%;
-}
-.ContainerButton{
-  display:flex;
-  justify-content:center;
-  font-size:15px;
-  gap:15px;
-}
-.ButtonPreNext{
-  width:15%;
-  background: #062226;
-  border-radius:4.5px;
-  color:white;
-}
-.ButtonPreNext:hover{
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  color: #1ddec0;
-}
-.buttonPage{
-  width: 2rem;
-  aspect-ratio:1;
-  display:flex;
+
+.modalHeader {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  align-item:center;
-  font-weight: bold;
-  color:#7E7E7E;
-  background: #062226;
-  border-radius:50%;
 }
-.ButtonAct,
-.buttonPage:hover{
-  color:#062226;
-  background: #7E7E7E;
-  cursor:pointer;
+
+.modalImage {
+  margin-right: 10px; 
+  max-width: 70px;
+}
+
+.name {
+  font-weight: bold; 
+  font-size: 1.2rem; 
+}
+
+.titleConfirmacion {
+  font-size: 1.5rem;
+}
+
+.text {
+  font-size: 1rem;
+  padding: 10%;
+}
+
+.btnConfirmar,
+.btnNo {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100%;
+  max-width: 150px;
+  margin-top: 20px; 
+}
+
+.btnNo {
+  background-color: black;
+  margin-left: 10px; 
+}
+
+.btnConfirmar:hover,
+.btnNo:hover {
+  background-color: purple;
 }
