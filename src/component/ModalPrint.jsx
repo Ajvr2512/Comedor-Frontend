@@ -16,12 +16,12 @@ const ModalPrint = ({ userInfo, isOpen }) => {
         <div className="ModalBody">
           <div className="modalHeader">
             <img src="src/assets/img/confirma.png" alt="Imagen" className="modalImage" />
-            <h2 className="titleConfirmacion">Confirmar nombre</h2>
+            <h2 className="titleConfirmacion">Imprimiendo ticket.....</h2>
           </div>
           <p className="text">
-            ¿ Podría confirmar si su nombre es
+            Bienenido al comedor de Pascua 2024
             <span className="name"> {userInfo.nombre}</span>
-            <span className="name"> {userInfo.apellido}</span>?
+            <span className="name"> {userInfo.apellido}</span>
           </p>
         </div>
       )}
